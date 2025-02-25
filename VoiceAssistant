@@ -9,4 +9,4 @@ cd swig/Python3; make
 //end fix bug
 4. Cp example file: cp snowboydetect.py _snowboydetect.so ../../examples/Python3/
 5. Change import in snowboydecoder.py: use "import snowboydetect"
-6. Do test: python3 demo.py /resources/model/snowboy.umdl //need cp -r ../../resources ./
+6. Do test: python3 ./examples/Python3/demo.py /resources/model/snowboy.umdl //need run at snowboy top level
