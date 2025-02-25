@@ -1,6 +1,12 @@
 1. Get snowboy github: git clone https://github.com/Kitt-AI/snowboy.git
 2. Install needed pip: sudo apt install python3 python3-pyaudio python3-pip libatlas-base-dev portaudio19-dev swig
-3. Make compile: cd swig/Python3; make
+3. Make compile: 
+cd swig/Python3; make 
+//fix bug @ Makefile 73 line: 
+  ifneq (,$(findstring aarch64,$(shell uname -m)))
+      SNOWBOYDETECTLIBFILE = $(TOPDIR)/lib/aarch64-ubuntu1604/libsnowboy-detect.a
+  endif 
+//end fix bug
 4. Cp example file: cp snowboydetect.py _snowboydetect.so <DIR>
 5. Change import in snowboydecoder.py: use "import snowboydetect"
 6. Do test: python3 demo.py resource/model/snowboy.umdl
